@@ -1,1 +1,308 @@
 
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>الصفحة غير موجودة | المشتاق للعمرة</title>
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Google Fonts: El Messiri -->
+    <link href="https://fonts.googleapis.com/css2?family=El+Messiri:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'El Messiri', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #fefaf5 0%, #f8f1e6 100%);
+            color: #2c2b28;
+            overflow-x: hidden;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* نفس تنسيق النافبار الثابت الشفاف */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: transparent;
+            padding: 12px 0;
+            backdrop-filter: none;
+        }
+        .container {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 30px;
+        }
+        .header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .logo-container {
+            position: relative;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .logo-3d {
+            position: relative;
+            width: 55px;
+            height: 55px;
+            transform-style: preserve-3d;
+            animation: logoRotate 8s infinite linear;
+        }
+        .logo-mosque {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 30px;
+            color: #4a2e1e;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            filter: drop-shadow(0 0 6px rgba(212,175,85,0.4));
+            z-index: 2;
+        }
+        .logo-ring {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 60px;
+            height: 60px;
+            border: 2px solid #c9a04b;
+            border-radius: 50%;
+            animation: ringRotate 4s infinite linear;
+        }
+        .logo-ring::before {
+            content: '';
+            position: absolute;
+            top: -5px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 10px;
+            height: 10px;
+            background: #e3b05c;
+            border-radius: 50%;
+            box-shadow: 0 0 8px #e3b05c;
+        }
+        .logo-glow {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 75px;
+            height: 75px;
+            background: radial-gradient(circle, rgba(201,160,75,0.2) 0%, rgba(201,160,75,0.05) 50%, transparent 70%);
+            border-radius: 50%;
+            animation: logoPulse 3s infinite alternate;
+        }
+        .logo-text h1 {
+            font-size: 24px;
+            font-weight: 800;
+            color: #4a2e1e;
+            text-shadow: 0 1px 2px rgba(255,255,200,0.5);
+        }
+        .logo-text p {
+            font-size: 11px;
+            color: #8b6b42;
+            font-weight: 500;
+        }
+
+        /* محتوى صفحة 404 */
+        .error-section {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 120px 20px 80px;
+            text-align: center;
+        }
+        .error-content {
+            max-width: 700px;
+            margin: 0 auto;
+            background: rgba(255,255,245,0.8);
+            backdrop-filter: blur(10px);
+            border-radius: 48px;
+            padding: 50px 30px;
+            box-shadow: 0 25px 45px -12px rgba(0,0,0,0.2);
+            border: 1px solid rgba(212,175,85,0.3);
+        }
+        .error-code {
+            font-size: 140px;
+            font-weight: 800;
+            background: linear-gradient(135deg, #c9a04b, #9e6d2e);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            line-height: 1;
+            margin-bottom: 20px;
+            text-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        .error-icon {
+            font-size: 70px;
+            color: #dbb15e;
+            margin-bottom: 20px;
+        }
+        .error-title {
+            font-size: 32px;
+            font-weight: 800;
+            margin-bottom: 15px;
+            color: #3a2a1c;
+        }
+        .error-message {
+            font-size: 18px;
+            color: #5e4d36;
+            margin-bottom: 35px;
+            line-height: 1.7;
+        }
+        .error-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .btn-home {
+            background: linear-gradient(135deg, #c9a04b, #a47c3a);
+            padding: 14px 28px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 16px;
+            color: #fff;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: 0.2s;
+            box-shadow: 0 5px 12px rgba(0,0,0,0.1);
+        }
+        .btn-home:hover {
+            transform: translateY(-3px);
+            background: linear-gradient(135deg, #dbb15e, #b8893c);
+        }
+        .btn-contact {
+            background: transparent;
+            border: 1.5px solid #c9a04b;
+            padding: 14px 28px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 16px;
+            color: #a47c3a;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: 0.2s;
+        }
+        .btn-contact:hover {
+            background: #c9a04b;
+            color: white;
+            border-color: #c9a04b;
+        }
+        .footer {
+            background: #1f1c17;
+            padding: 25px 0;
+            text-align: center;
+            color: #cfc5b2;
+            font-size: 14px;
+            margin-top: auto;
+        }
+
+        @keyframes logoRotate {
+            0% { transform: rotateY(0deg); }
+            100% { transform: rotateY(360deg); }
+        }
+        @keyframes ringRotate {
+            0% { transform: translate(-50%, -50%) rotate(0deg); }
+            100% { transform: translate(-50%, -50%) rotate(360deg); }
+        }
+        @keyframes logoPulse {
+            0% { transform: translate(-50%, -50%) scale(1); opacity: 0.4; }
+            100% { transform: translate(-50%, -50%) scale(1.2); opacity: 0.1; }
+        }
+
+        @media (max-width: 650px) {
+            .error-code { font-size: 90px; }
+            .error-title { font-size: 26px; }
+            .error-content { padding: 35px 20px; }
+            .logo-text h1 { font-size: 18px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- نفس النافبار الثابت مع اللوجو -->
+    <div class="header">
+        <div class="container">
+            <div class="logo">
+                <div class="logo-container">
+                    <div class="logo-3d">
+                        <div class="logo-glow"></div>
+                        <div class="logo-ring"></div>
+                        <i class="fas fa-mosque logo-mosque"></i>
+                    </div>
+                </div>
+                <div class="logo-text">
+                    <h1>المشتاق</h1>
+                    <p>للعمرة من الرياض</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- محتوى 404 -->
+    <section class="error-section">
+        <div class="container">
+            <div class="error-content">
+                <div class="error-icon">
+                    <i class="fas fa-exclamation-triangle"></i>
+                </div>
+                <div class="error-code">404</div>
+                <h1 class="error-title">عذراً! الصفحة غير موجودة</h1>
+                <p class="error-message">
+                    يبدو أن الرابط الذي تبحث عنه قد تم نقله أو حذفه أو أنه غير صحيح.  
+                    لا تقلق، يمكنك العودة إلى الصفحة الرئيسية أو تصفح برامج العمرة المتاحة.
+                </p>
+                <div class="error-buttons">
+                    <a href="./" class="btn-home"><i class="fas fa-home"></i> الرئيسية</a>
+                    <a href="#programs" class="btn-contact" id="packagesLink"><i class="fas fa-calendar-check"></i> برامج العمرة</a>
+                    <a href="https://wa.me/966575318354" target="_blank" class="btn-contact"><i class="fab fa-whatsapp"></i> واتساب الدعم</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="footer">
+        <div class="container">
+            <p><i class="fas fa-heart" style="color: #d4af6a;"></i> المشتاق للعمرة – رحلات روحية من الرياض بكل ثقة واحترافية <i class="fas fa-mosque"></i></p>
+            <p style="font-size: 13px; margin-top: 8px;">جميع الحقوق محفوظة © 2025</p>
+        </div>
+    </div>
+
+    <script>
+        // توجيه زر برامج العمرة إلى الصفحة الرئيسية مع التمرير إلى القسم
+        document.getElementById('packagesLink').addEventListener('click', function(e) {
+            e.preventDefault();
+            window.location.href = './#programs';
+        });
+        // إذا كان المستخدم على نفس النطاق يمكن العودة للرئيسية
+    </script>
+</body>
+</html>
