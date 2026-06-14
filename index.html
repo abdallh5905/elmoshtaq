@@ -445,6 +445,15 @@
             0% { transform: translate(-50%, -50%) scale(1); opacity: 0.5; }
             100% { transform: translate(-50%, -50%) scale(1.2); opacity: 0.2; }
         }
+
+        .header.scrolled {
+    background: rgba(28, 24, 18, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(245, 205, 138, 0.2);
+    padding: 8px 0;
+}
+
+        
     </style>
 </head>
 <body>
@@ -570,6 +579,18 @@
         if(video) {
             video.play().catch(e => console.log("Auto-play prevented, but it's okay"));
         }
+
+        <script>
+window.addEventListener('scroll', function () {
+    const header = document.querySelector('.header');
+
+    if (window.scrollY > 50) {
+        header.classList.add('scrolled');
+    } else {
+        header.classList.remove('scrolled');
+    }
+});
+</script>
     </script>
 </body>
 </html>
