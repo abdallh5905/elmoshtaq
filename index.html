@@ -453,6 +453,20 @@
     padding: 8px 0;
 }
 
+        .header {
+    position: fixed;
+    top: -100px;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background: rgba(28,24,18,.95);
+    backdrop-filter: blur(10px);
+    transition: all .3s ease;
+}
+
+.header.show {
+    top: 0;
+}
         
     </style>
 </head>
@@ -588,6 +602,18 @@ window.addEventListener('scroll', function () {
         header.classList.add('scrolled');
     } else {
         header.classList.remove('scrolled');
+    }
+});
+</script>
+
+    <script>
+window.addEventListener('scroll', function () {
+    const header = document.querySelector('.header');
+
+    if (window.scrollY > 150) {
+        header.classList.add('show');
+    } else {
+        header.classList.remove('show');
     }
 });
 </script>
