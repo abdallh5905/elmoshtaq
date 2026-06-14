@@ -1,622 +1,636 @@
 <!DOCTYPE html>
 <html dir="rtl" lang="ar">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>المشتاق | عمرة من الرياض - باقات VIP واقتصادية</title>
-    <!-- Font Awesome 6 -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <!-- Google Fonts: El Messiri -->
-    <link href="https://fonts.googleapis.com/css2?family=El+Messiri:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=1.0, user-scalable=yes">
+  <title>المشتاق | عمرة من الرياض</title>
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <!-- Google Fonts: El Messiri -->
+  <link href="https://fonts.googleapis.com/css2?family=El+Messiri:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        body {
-            font-family: 'El Messiri', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #fefaf5;
-            color: #2c2b28;
-            overflow-x: hidden;
-        }
+    body {
+      font-family: 'El Messiri', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #fefaf5;
+      color: #2c2b28;
+      overflow-x: hidden;
+    }
 
-        ::-webkit-scrollbar {
-            width: 6px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #e9e2d8;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #aa7b3e;
-            border-radius: 10px;
-        }
+    ::-webkit-scrollbar {
+      width: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #e9e2d8;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #aa7b3e;
+      border-radius: 10px;
+    }
 
-        .container {
-            max-width: 1300px;
-            margin: 0 auto;
-            padding: 0 30px;
-        }
+    .container {
+      max-width: 1300px;
+      margin: 0 auto;
+      padding: 0 30px;
+    }
 
-        /* ========== الهيدر / navbar ثابت شفاف (لا يتحرك) ========== */
-        .header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            z-index: 1000;
-            background: transparent;
-            padding: 12px 0;
-            transition: all 0.2s ease;
-            backdrop-filter: none;
-            border-bottom: none;
-        }
-        .header .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-        }
-        /* لوجو ثلاثي الأبعاد مستوحى من شعائر مكة مع أيقونة مسجد */
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-        .logo-container {
-            position: relative;
-            width: 60px;
-            height: 60px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .logo-3d {
-            position: relative;
-            width: 55px;
-            height: 55px;
-            transform-style: preserve-3d;
-            animation: logoRotate 8s infinite linear;
-        }
-        .logo-mosque {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            font-size: 30px;
-            color: #ffefcf;
-            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
-            filter: drop-shadow(0 0 8px rgba(255,215,0,0.6));
-            z-index: 2;
-        }
-        .logo-ring {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 60px;
-            height: 60px;
-            border: 2px solid #f5cd8a;
-            border-radius: 50%;
-            animation: ringRotate 4s infinite linear;
-        }
-        .logo-ring::before {
-            content: '';
-            position: absolute;
-            top: -5px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 10px;
-            height: 10px;
-            background: #ffb347;
-            border-radius: 50%;
-            box-shadow: 0 0 10px #ffb347;
-        }
-        .logo-glow {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 75px;
-            height: 75px;
-            background: radial-gradient(circle, rgba(255,215,0,0.3) 0%, rgba(255,107,53,0.1) 50%, transparent 70%);
-            border-radius: 50%;
-            animation: logoPulse 3s infinite alternate;
-        }
-        .logo-text h1 {
-            font-size: 24px;
-            font-weight: 800;
-            color: #fff6e5;
-            text-shadow: 0 2px 5px rgba(0,0,0,0.3);
-            letter-spacing: -0.5px;
-        }
-        .logo-text p {
-            font-size: 11px;
-            color: #f3e1b3;
-            font-weight: 500;
-        }
-        /* لا توجد أزرار في النافبار */
+    /* ========== الهيدر – يظهر فقط داخل الهيرو (position: absolute) ========== */
+    .hero-header {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 20;
+      background: transparent;
+      padding: 12px 0;
+      transition: all 0.2s ease;
+    }
 
-        /* ========== HERO SECTION مع فيديو خلفية (تم إصلاح الرابط) ========== */
-        .hero {
-            position: relative;
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            overflow: hidden;
-        }
-        .hero-video {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            z-index: 0;
-        }
-        .hero-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(107deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.5) 100%);
-            z-index: 1;
-        }
-        .hero-content {
-            position: relative;
-            z-index: 2;
-            max-width: 850px;
-            padding: 0 20px;
-            color: white;
-        }
-        .hero-badge {
-            display: inline-block;
-            background: rgba(130, 50, 50, 0.85);
-            backdrop-filter: blur(8px);
-            padding: 6px 18px;
-            border-radius: 60px;
-            font-size: 14px;
-            font-weight: 600;
-            color: #ffefcf;
-            margin-bottom: 20px;
-            border: 1px solid #f5cd8a;
-        }
-        .hero-content h1 {
-            font-size: 56px;
-            font-weight: 800;
-            margin-bottom: 20px;
-            text-shadow: 0 6px 18px rgba(0,0,0,0.5);
-        }
-        .hero-content h1 span {
-            color: #ffdd99;
-            border-bottom: 2px solid #f5cd8a;
-        }
-        .hero-description {
-            font-size: 18px;
-            margin-bottom: 40px;
-            line-height: 1.7;
-            font-weight: 400;
-            text-shadow: 0 1px 3px rgba(0,0,0,0.3);
-        }
-        .hero-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-        .btn-primary {
-            background: linear-gradient(135deg, #e2b062, #c78937);
-            padding: 12px 32px;
-            border-radius: 50px;
-            font-weight: 800;
-            font-size: 17px;
-            color: #2c241a;
-            transition: 0.2s;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-            border: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            text-decoration: none;
-        }
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            background: linear-gradient(135deg, #f7c87a, #da9f48);
-        }
-        .btn-secondary {
-            background: rgba(255,255,245,0.12);
-            backdrop-filter: blur(6px);
-            padding: 12px 32px;
-            border-radius: 50px;
-            font-weight: 700;
-            font-size: 17px;
-            color: #fff7e8;
-            border: 1.5px solid #f5cd8a;
-            transition: 0.2s;
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            text-decoration: none;
-        }
-        .btn-secondary:hover {
-            background: rgba(255,255,230,0.25);
-            border-color: #ffdfa5;
-        }
+    .hero-header .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
 
-        /* ========== برامج العمرة (فقط المحتوى المرسل) ========== */
-        .programs {
-            padding: 85px 0 100px;
-            background: #ffffff;
-        }
-        .section-header {
-            text-align: center;
-            margin-bottom: 60px;
-        }
-        .section-header h2 {
-            font-size: 42px;
-            font-weight: 800;
-            color: #2d2a24;
-            position: relative;
-            display: inline-block;
-            margin-bottom: 15px;
-        }
-        .section-header h2:after {
-            content: '';
-            width: 80px;
-            height: 4px;
-            background: linear-gradient(90deg, #ca9346, #9c6c2e);
-            position: absolute;
-            bottom: -12px;
-            right: 50%;
-            transform: translateX(50%);
-            border-radius: 3px;
-        }
-        .cards-grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 40px;
-            justify-content: center;
-        }
-        .card {
-            flex: 1;
-            min-width: 300px;
-            max-width: 500px;
-            background: #ffffff;
-            border-radius: 28px;
-            overflow: hidden;
-            transition: all 0.3s ease;
-            box-shadow: 0 18px 30px -10px rgba(0,0,0,0.08);
-            border: 1px solid #efe0ce;
-        }
-        .card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 28px 35px -12px rgba(0,0,0,0.15);
-            border-color: #dcbc8b;
-        }
-        .card-img {
-            height: 200px;
-            background-size: cover;
-            background-position: center;
-            position: relative;
-        }
-        .vip-card .card-img {
-            background-image: linear-gradient(0deg, rgba(0,0,0,0.2), rgba(0,0,0,0.1)), url('1.jpg');
-        }
-        .eco-card .card-img {
-            background-image: linear-gradient(0deg, rgba(0,0,0,0.15), rgba(0,0,0,0.05)), url('2.jpg');
-        }
-        .card-badge {
-            position: absolute;
-            top: 18px;
-            left: 20px;
-            background: #b37b34;
-            color: white;
-            padding: 5px 18px;
-            border-radius: 40px;
-            font-weight: 800;
-            font-size: 14px;
-            box-shadow: 0 3px 8px rgba(0,0,0,0.15);
-        }
-        .card-content {
-            padding: 28px 26px 32px;
-        }
-        .card-title {
-            font-size: 28px;
-            font-weight: 800;
-            margin-bottom: 20px;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            color: #2d2a24;
-        }
-        .card-title i {
-            font-size: 32px;
-            color: #c68b3c;
-        }
-        .card-features {
-            list-style: none;
-            margin: 20px 0 30px;
-        }
-        .card-features li {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            margin-bottom: 16px;
-            font-size: 16px;
-            color: #4a4238;
-        }
-        .card-features li i {
-            width: 24px;
-            color: #daa553;
-            font-size: 18px;
-        }
-        .card-btn {
-            width: 100%;
-            background: #fef5ea;
-            border: 1.5px solid #dcb06b;
-            padding: 13px 0;
-            border-radius: 60px;
-            font-weight: 700;
-            font-size: 16px;
-            color: #9a6d34;
-            transition: 0.25s;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 10px;
-            cursor: pointer;
-            margin-top: 10px;
-        }
-        .card-btn i {
-            font-size: 18px;
-        }
-        .card-btn:hover {
-            background: #dcb06b;
-            color: #fff;
-            border-color: #dcb06b;
-        }
+    /* لوجو ثلاثي الأبعاد مع أيقونة مسجد */
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
 
-        /* أيقونة واتساب عائمة */
-        .floating-wa {
-            position: fixed;
-            bottom: 25px;
-            left: 25px;
-            background: #25D366;
-            width: 55px;
-            height: 55px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 6px 16px rgba(0,0,0,0.2);
-            z-index: 999;
-            transition: 0.15s;
-        }
-        .floating-wa a {
-            color: white;
-            font-size: 30px;
-        }
-        .floating-wa:hover {
-            transform: scale(1.05);
-            background: #128C7E;
-        }
+    .logo-container {
+      position: relative;
+      width: 60px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
 
-        .footer {
-            background: #1f1c17;
-            padding: 35px 0;
-            text-align: center;
-            color: #cfc5b2;
-        }
-        .footer a {
-            color: #dbb16e;
-            text-decoration: none;
-        }
+    .logo-3d {
+      position: relative;
+      width: 55px;
+      height: 55px;
+      transform-style: preserve-3d;
+      animation: logoRotate 8s infinite linear;
+    }
 
-        @media (max-width: 850px) {
-            .container { padding: 0 20px; }
-            .hero-content h1 { font-size: 38px; }
-            .section-header h2 { font-size: 32px; }
-            .header .container { justify-content: center; }
-            .logo-text h1 { font-size: 20px; }
-            .logo-container { width: 50px; height: 50px; }
-            .logo-3d { width: 45px; height: 45px; }
-            .logo-mosque { font-size: 24px; }
-        }
-        @media (max-width: 550px) {
-            .hero-buttons { flex-direction: column; align-items: center; gap: 15px; }
-            .btn-primary, .btn-secondary { width: 80%; justify-content: center; }
-            .card-title { font-size: 24px; }
-        }
+    .logo-mosque {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 30px;
+      color: #ffefcf;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+      filter: drop-shadow(0 0 8px rgba(255,215,0,0.6));
+      z-index: 2;
+    }
 
-        /* حركات الشعار */
-        @keyframes logoRotate {
-            0% { transform: rotateY(0deg); }
-            100% { transform: rotateY(360deg); }
-        }
-        @keyframes ringRotate {
-            0% { transform: translate(-50%, -50%) rotate(0deg); }
-            100% { transform: translate(-50%, -50%) rotate(360deg); }
-        }
-        @keyframes logoPulse {
-            0% { transform: translate(-50%, -50%) scale(1); opacity: 0.5; }
-            100% { transform: translate(-50%, -50%) scale(1.2); opacity: 0.2; }
-        }
+    .logo-ring {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 60px;
+      height: 60px;
+      border: 2px solid #f5cd8a;
+      border-radius: 50%;
+      animation: ringRotate 4s infinite linear;
+    }
 
-        .header.scrolled {
-    background: rgba(28, 24, 18, 0.95);
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid rgba(245, 205, 138, 0.2);
-    padding: 8px 0;
-}
+    .logo-ring::before {
+      content: '';
+      position: absolute;
+      top: -5px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 10px;
+      height: 10px;
+      background: #ffb347;
+      border-radius: 50%;
+      box-shadow: 0 0 10px #ffb347;
+    }
 
-        .header {
-    position: fixed;
-    top: -100px;
-    left: 0;
-    width: 100%;
-    z-index: 1000;
-    background: rgba(28,24,18,.95);
-    backdrop-filter: blur(10px);
-    transition: all .3s ease;
-}
+    .logo-glow {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 75px;
+      height: 75px;
+      background: radial-gradient(circle, rgba(255,215,0,0.3) 0%, rgba(255,107,53,0.1) 50%, transparent 70%);
+      border-radius: 50%;
+      animation: logoPulse 3s infinite alternate;
+    }
 
-.header.show {
-    top: 0;
-}
-        
-    </style>
+    .logo-text h1 {
+      font-size: 24px;
+      font-weight: 800;
+      color: #fff6e5;
+      text-shadow: 0 2px 5px rgba(0,0,0,0.3);
+      letter-spacing: -0.5px;
+    }
+
+    .logo-text p {
+      font-size: 11px;
+      color: #f3e1b3;
+      font-weight: 500;
+    }
+
+    /* ========== HERO SECTION (فيديو + محتوى) ========== */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .hero-video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 0;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(107deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.5) 100%);
+      z-index: 1;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 10;
+      max-width: 850px;
+      padding: 0 20px;
+      color: white;
+      margin-top: 20px;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      background: rgba(130, 50, 50, 0.85);
+      backdrop-filter: blur(8px);
+      padding: 6px 18px;
+      border-radius: 60px;
+      font-size: 14px;
+      font-weight: 600;
+      color: #ffefcf;
+      margin-bottom: 20px;
+      border: 1px solid #f5cd8a;
+    }
+
+    .hero-content h1 {
+      font-size: 56px;
+      font-weight: 800;
+      margin-bottom: 20px;
+      text-shadow: 0 6px 18px rgba(0,0,0,0.5);
+    }
+
+    .hero-content h1 span {
+      color: #ffdd99;
+      border-bottom: 2px solid #f5cd8a;
+    }
+
+    .hero-description {
+      font-size: 18px;
+      margin-bottom: 40px;
+      line-height: 1.7;
+      font-weight: 400;
+      text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+    }
+
+    .hero-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #e2b062, #c78937);
+      padding: 12px 32px;
+      border-radius: 50px;
+      font-weight: 800;
+      font-size: 17px;
+      color: #2c241a;
+      transition: 0.2s;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      border: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      background: linear-gradient(135deg, #f7c87a, #da9f48);
+    }
+
+    .btn-secondary {
+      background: rgba(255,255,245,0.12);
+      backdrop-filter: blur(6px);
+      padding: 12px 32px;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 17px;
+      color: #fff7e8;
+      border: 1.5px solid #f5cd8a;
+      transition: 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255,255,230,0.25);
+      border-color: #ffdfa5;
+    }
+
+    /* ========== برامج العمرة ========== */
+    .programs {
+      padding: 85px 0 100px;
+      background: #ffffff;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .section-header h2 {
+      font-size: 42px;
+      font-weight: 800;
+      color: #2d2a24;
+      position: relative;
+      display: inline-block;
+      margin-bottom: 15px;
+    }
+
+    .section-header h2:after {
+      content: '';
+      width: 80px;
+      height: 4px;
+      background: linear-gradient(90deg, #ca9346, #9c6c2e);
+      position: absolute;
+      bottom: -12px;
+      right: 50%;
+      transform: translateX(50%);
+      border-radius: 3px;
+    }
+
+    .cards-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      justify-content: center;
+    }
+
+    .card {
+      flex: 1;
+      min-width: 300px;
+      max-width: 500px;
+      background: #ffffff;
+      border-radius: 28px;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      box-shadow: 0 18px 30px -10px rgba(0,0,0,0.08);
+      border: 1px solid #efe0ce;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 28px 35px -12px rgba(0,0,0,0.15);
+      border-color: #dcbc8b;
+    }
+
+    .card-img {
+      height: 200px;
+      background-size: cover;
+      background-position: center;
+      position: relative;
+    }
+
+    .vip-card .card-img {
+      background-image: linear-gradient(0deg, rgba(0,0,0,0.2), rgba(0,0,0,0.1)), url('1.jpg');
+    }
+
+    .eco-card .card-img {
+      background-image: linear-gradient(0deg, rgba(0,0,0,0.15), rgba(0,0,0,0.05)), url('2.jpg');
+    }
+
+    .card-badge {
+      position: absolute;
+      top: 18px;
+      left: 20px;
+      background: #b37b34;
+      color: white;
+      padding: 5px 18px;
+      border-radius: 40px;
+      font-weight: 800;
+      font-size: 14px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+    }
+
+    .card-content {
+      padding: 28px 26px 32px;
+    }
+
+    .card-title {
+      font-size: 28px;
+      font-weight: 800;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: #2d2a24;
+    }
+
+    .card-title i {
+      font-size: 32px;
+      color: #c68b3c;
+    }
+
+    .card-features {
+      list-style: none;
+      margin: 20px 0 30px;
+    }
+
+    .card-features li {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+      font-size: 16px;
+      color: #4a4238;
+    }
+
+    .card-features li i {
+      width: 24px;
+      color: #daa553;
+      font-size: 18px;
+    }
+
+    .card-btn {
+      width: 100%;
+      background: #fef5ea;
+      border: 1.5px solid #dcb06b;
+      padding: 13px 0;
+      border-radius: 60px;
+      font-weight: 700;
+      font-size: 16px;
+      color: #9a6d34;
+      transition: 0.25s;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    .card-btn i {
+      font-size: 18px;
+    }
+
+    .card-btn:hover {
+      background: #dcb06b;
+      color: #fff;
+      border-color: #dcb06b;
+    }
+
+    /* أيقونة واتساب عائمة */
+    .floating-wa {
+      position: fixed;
+      bottom: 25px;
+      left: 25px;
+      background: #25D366;
+      width: 55px;
+      height: 55px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+      z-index: 999;
+      transition: 0.15s;
+    }
+
+    .floating-wa a {
+      color: white;
+      font-size: 30px;
+    }
+
+    .floating-wa:hover {
+      transform: scale(1.05);
+      background: #128C7E;
+    }
+
+    .footer {
+      background: #1f1c17;
+      padding: 35px 0;
+      text-align: center;
+      color: #cfc5b2;
+    }
+
+    .footer a {
+      color: #dbb16e;
+      text-decoration: none;
+    }
+
+    @media (max-width: 850px) {
+      .container { padding: 0 20px; }
+      .hero-content h1 { font-size: 38px; }
+      .section-header h2 { font-size: 32px; }
+      .hero-header .container { justify-content: center; }
+      .logo-text h1 { font-size: 20px; }
+      .logo-container { width: 50px; height: 50px; }
+      .logo-3d { width: 45px; height: 45px; }
+      .logo-mosque { font-size: 24px; }
+    }
+
+    @media (max-width: 550px) {
+      .hero-buttons { flex-direction: column; align-items: center; gap: 15px; }
+      .btn-primary, .btn-secondary { width: 80%; justify-content: center; }
+      .card-title { font-size: 24px; }
+    }
+
+    /* حركات الشعار */
+    @keyframes logoRotate {
+      0% { transform: rotateY(0deg); }
+      100% { transform: rotateY(360deg); }
+    }
+    @keyframes ringRotate {
+      0% { transform: translate(-50%, -50%) rotate(0deg); }
+      100% { transform: translate(-50%, -50%) rotate(360deg); }
+    }
+    @keyframes logoPulse {
+      0% { transform: translate(-50%, -50%) scale(1); opacity: 0.5; }
+      100% { transform: translate(-50%, -50%) scale(1.2); opacity: 0.2; }
+    }
+  </style>
 </head>
 <body>
 
-    <!-- هيدر / navbar ثابت شفاف بدون أي أزرار -->
-    <div class="header">
-        <div class="container">
-            <div class="logo">
-                <div class="logo-container">
-                    <div class="logo-3d">
-                        <div class="logo-glow"></div>
-                        <div class="logo-ring"></div>
-                        <!-- أيقونة مسجد -->
-                        <i class="fas fa-mosque logo-mosque"></i>
-                    </div>
-                </div>
-                <div class="logo-text">
-                    <h1>المشتاق</h1>
-                    <p>للعمرة من الرياض</p>
-                </div>
-            </div>
+<!-- ========== هيرو + هيدر داخل نفس القسم ========== -->
+<section class="hero" id="hero">
+  <!-- فيديو الخلفية -->
+  <video class="hero-video" autoplay muted loop playsinline poster="kabaa.mp4">
+    <source src="kabaa.mp4" type="video/mp4">
+  </video>
+  <div class="hero-overlay"></div>
+
+  <!-- الهيدر (يظهر داخل الهيرو فقط) -->
+  <div class="hero-header">
+    <div class="container">
+      <div class="logo">
+        <div class="logo-container">
+          <div class="logo-3d">
+            <div class="logo-glow"></div>
+            <div class="logo-ring"></div>
+            <i class="fas fa-mosque logo-mosque"></i>
+          </div>
         </div>
+        <div class="logo-text">
+          <h1>المشتاق</h1>
+          <p>للعمرة من الرياض</p>
+        </div>
+      </div>
     </div>
+  </div>
 
-    <!-- هيرو بخلفية فيديو (تم إصلاح الرابط) -->
-    <section class="hero">
-        <video class="hero-video" autoplay muted loop playsinline poster="kabaa.mp4">
-            <!-- فيديو مباشر من CDN (مشهد للحرم المكي أو أجواء روحية) -->
-            <source src="kabaa.mp4" type="video/mp4">
-            <source src="kabaa.mp4" type="video/mp4">
-            <!-- في حالة عدم عمل الفيديو، تظهر صورة خلفية ثابتة -->
-        </video>
-        <div class="hero-overlay"></div>
-        <div class="hero-content">
-            <div class="hero-badge">
-                <i class="fas fa-mosque"></i> بسم الله الرحمن الرحيم
-            </div>
-            <h1>ارتحال <span>المشتاق</span> <br> من الرياض إلى بيت الله</h1>
-            <p class="hero-description">
-                نسعد بخدمتكم في رحلة العمرة بأعلى معايير الراحة والتميز. نُقدم باقات فاخرة واقتصادية تناسب جميع الميزانيات، مع أفضل التنظيمات والإقامات المريحة.
-            </p>
-            <div class="hero-buttons">
-                <a href="#programs" class="btn-primary"><i class="fas fa-calendar-check"></i> برامج العمرة</a>
-                <a href="https://wa.me/966575318354" target="_blank" class="btn-secondary"><i class="fab fa-whatsapp"></i> واتساب للاستفسار</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- برامج العمرة (فقط المحتوى المطلوب، بدون أسعار) -->
-    <section class="programs" id="programs">
-        <div class="container">
-            <div class="section-header">
-                <h2>باقات العمرة المميزة</h2>
-                <p>اختر الباقة التي تناسبك بين الفخامة المطلقة والرحلة الاقتصادية المريحة، رحلات من الرياض إلى الأراضي المقدسة.</p>
-            </div>
-            <div class="cards-grid">
-                <!-- باقة VIP -->
-                <div class="card vip-card">
-                    <div class="card-img">
-                        <div class="card-badge"><i class="fas fa-crown"></i> VIP فاخرة</div>
-                    </div>
-                    <div class="card-content">
-                        <div class="card-title">
-                            <i class="fas fa-gem"></i>
-                            <span>رحلة VIP </span>
-                        </div>
-                        <ul class="card-features">
-                            <li><i class="fas fa-calendar-week"></i> يوم الاثنين والخميس من كل أسبوع</li>
-                            <li><i class="fas fa-hotel"></i> فنادق 5 نجوم قريبة من الحرم</li>
-                            <li><i class="fas fa-user-tie"></i> مرافقة خاصة وخدمة غرف</li>
-                            <li><i class="fas fa-calendar-alt"></i> إمكانية تخصيص المواعيد</li>
-                        </ul>
-                        <button class="card-btn" onclick="window.open('https://wa.me/966575318354?text=السلام%20عليكم%20أرغب%20في%20حجز%20رحلة%20VIP%20العمرة%20من%20الرياض','_blank')"><i class="fab fa-whatsapp"></i> احجز VIP الآن</button>
-                    </div>
-                </div>
-                <!-- الباقة الاقتصادية -->
-                <div class="card eco-card">
-                    <div class="card-img">
-                        <div class="card-badge" style="background: #748c5e;"><i class="fas fa-leaf"></i> ميسور</div>
-                    </div>
-                    <div class="card-content">
-                        <div class="card-title">
-                            <i class="fas fa-ticket-alt"></i>
-                            <span>رحلة اقتصادية</span>
-                        </div>
-                        <ul class="card-features">
-                            <li><i class="fas fa-calendar-check"></i> جميع أيام الأسبوع</li>
-                            <li><i class="fas fa-hotel"></i> فنادق 3 نجوم نظيفة ومريحة</li>
-                            <li><i class="fas fa-chart-line"></i> أسعار تنافسية مناسبة للجميع</li>
-                            <li><i class="fas fa-bus"></i> باصات حديثة ومكيفة</li>
-                        </ul>
-                        <button class="card-btn" onclick="window.open('https://wa.me/966575318354?text=أهلاً%20أرغب%20في%20حجز%20الباقة%20الاقتصادية%20للعمرة','_blank')"><i class="fab fa-whatsapp"></i> استفسار وحجز</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- فوتر -->
-    <div class="footer">
-        <div class="container">
-            <p><i class="fas fa-heart" style="color: #d4af6a;"></i> المشتاق للعمرة – رحلات روحية من الرياض بكل ثقة واحترافية <i class="fas fa-mosque"></i></p>
-            <p style="font-size: 13px; margin-top: 8px;">جميع الحقوق محفوظة © 2026 | تصميم راقٍ يليق بضيوف الرحمن</p>
-        </div>
+  <!-- المحتوى الرئيسي للهيرو -->
+  <div class="hero-content">
+    <div class="hero-badge">
+      <i class="fas fa-mosque"></i> بسم الله الرحمن الرحيم
     </div>
-
-    <!-- أيقونة واتساب عائمة -->
-    <div class="floating-wa">
-        <a href="https://wa.me/966575318354" target="_blank" aria-label="راسلنا على واتساب">
-            <i class="fab fa-whatsapp"></i>
-        </a>
+    <h1>ارتحال <span>المشتاق</span> <br> من الرياض إلى بيت الله</h1>
+    <p class="hero-description">
+      نسعد بخدمتكم في رحلة العمرة بأعلى معايير الراحة والتميز. نُقدم باقات فاخرة واقتصادية تناسب جميع الميزانيات، مع أفضل التنظيمات والإقامات المريحة.
+    </p>
+    <div class="hero-buttons">
+      <a href="#programs" class="btn-primary"><i class="fas fa-calendar-check"></i> برامج العمرة</a>
+      <a href="https://wa.me/966508645386" target="_blank" class="btn-secondary"><i class="fab fa-whatsapp"></i> واتساب للاستفسار</a>
     </div>
+  </div>
+</section>
 
-    <script>
-        // تمرير سلس للروابط الداخلية
-        document.querySelector('a[href="#programs"]')?.addEventListener('click', function(e) {
-            e.preventDefault();
-            const section = document.querySelector('#programs');
-            if(section) section.scrollIntoView({ behavior: 'smooth' });
-        });
-        // تشغيل الفيديو تلقائياً (المتصفحات الحديثة تسمح بذلك لأن الفيديو mute)
-        const video = document.querySelector('.hero-video');
-        if(video) {
-            video.play().catch(e => console.log("Auto-play prevented, but it's okay"));
+<!-- برامج العمرة (بدون أسعار) -->
+<section class="programs" id="programs">
+  <div class="container">
+    <div class="section-header">
+      <h2>باقات العمرة المميزة</h2>
+      <p>اختر الباقة التي تناسبك بين الفخامة المطلقة والرحلة الاقتصادية المريحة، رحلات من الرياض إلى الأراضي المقدسة.</p>
+    </div>
+    <div class="cards-grid">
+      <!-- VIP -->
+      <div class="card vip-card">
+        <div class="card-img">
+          <div class="card-badge"><i class="fas fa-crown"></i> VIP فاخرة</div>
+        </div>
+        <div class="card-content">
+          <div class="card-title">
+            <i class="fas fa-gem"></i>
+            <span>رحلة VIP </span>
+          </div>
+          <ul class="card-features">
+            <li><i class="fas fa-calendar-week"></i> يوم الاثنين والخميس من كل أسبوع</li>
+            <li><i class="fas fa-hotel"></i> فنادق 5 نجوم قريبة من الحرم</li>
+            <li><i class="fas fa-user-tie"></i> مرافقة خاصة وخدمة غرف</li>
+            <li><i class="fas fa-calendar-alt"></i> إمكانية تخصيص المواعيد</li>
+          </ul>
+          <button class="card-btn" onclick="window.open('https://wa.me/966508645386?text=السلام%20عليكم%20أرغب%20في%20حجز%20رحلة%20VIP%20العمرة%20من%20الرياض','_blank')"><i class="fab fa-whatsapp"></i> احجز VIP الآن</button>
+        </div>
+      </div>
+      <!-- اقتصادية -->
+      <div class="card eco-card">
+        <div class="card-img">
+          <div class="card-badge" style="background: #748c5e;"><i class="fas fa-leaf"></i> ميسور</div>
+        </div>
+        <div class="card-content">
+          <div class="card-title">
+            <i class="fas fa-ticket-alt"></i>
+            <span>رحلة اقتصادية</span>
+          </div>
+          <ul class="card-features">
+            <li><i class="fas fa-calendar-check"></i> جميع أيام الأسبوع</li>
+            <li><i class="fas fa-hotel"></i> فنادق 3 نجوم نظيفة ومريحة</li>
+            <li><i class="fas fa-chart-line"></i> أسعار تنافسية مناسبة للجميع</li>
+            <li><i class="fas fa-bus"></i> باصات حديثة ومكيفة</li>
+          </ul>
+          <button class="card-btn" onclick="window.open('https://wa.me/966508645386?text=أهلاً%20أرغب%20في%20حجز%20الباقة%20الاقتصادية%20للعمرة','_blank')"><i class="fab fa-whatsapp"></i> استفسار وحجز</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- فوتر -->
+<div class="footer">
+  <div class="container">
+    <p><i class="fas fa-heart" style="color: #d4af6a;"></i> المشتاق للعمرة – رحلات روحية من الرياض بكل ثقة واحترافية <i class="fas fa-mosque"></i></p>
+    <p style="font-size: 13px; margin-top: 8px;">جميع الحقوق محفوظة © 2026 | تصميم راقٍ يليق بضيوف الرحمن</p>
+  </div>
+</div>
+
+<!-- أيقونة واتساب عائمة -->
+<div class="floating-wa">
+  <a href="https://wa.me/966508645386" target="_blank" aria-label="راسلنا على واتساب">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+</div>
+
+<script>
+  (function() {
+    // تمرير سلس عند الضغط على "برامج العمرة"
+    const linkToPrograms = document.querySelector('a[href="#programs"]');
+    if (linkToPrograms) {
+      linkToPrograms.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = document.querySelector('#programs');
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth' });
         }
-
-        <script>
-window.addEventListener('scroll', function () {
-    const header = document.querySelector('.header');
-
-    if (window.scrollY > 50) {
-        header.classList.add('scrolled');
-    } else {
-        header.classList.remove('scrolled');
+      });
     }
-});
-</script>
 
-    <script>
-window.addEventListener('scroll', function () {
-    const header = document.querySelector('.header');
-
-    if (window.scrollY > 150) {
-        header.classList.add('show');
-    } else {
-        header.classList.remove('show');
+    // محاولة تشغيل الفيديو تلقائياً
+    const video = document.querySelector('.hero-video');
+    if (video) {
+      video.play().catch(function(err) {
+        console.log("تشغيل الفيديو التلقائي لم ينجح (قد يكون المتصفح منعه)، لكن التصميم يعمل.");
+      });
     }
-});
+
+    // للتأكد من أن الهيدر يبقى في الأعلى عند تحميل الصفحة (بدون تثبيت)
+    window.addEventListener('load', function() {
+      const heroHeader = document.querySelector('.hero-header');
+      if (heroHeader) {
+        heroHeader.style.position = 'absolute';
+        heroHeader.style.top = '0';
+      }
+    });
+  })();
 </script>
-    </script>
 </body>
 </html>
